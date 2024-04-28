@@ -20,13 +20,7 @@ rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
 rm -rf feeds/package/libs/libnftnl 
 
-git clone --depth=1 https://github.com/fullcone-nat-nftables/nft-fullcone package/turboacc/nft-fullcone
-git clone --depth=1 https://github.com/chenmozhijin/turboacc/luci-app-turboacc package/turboacc/turboacc
-
-
-rm -rf feeds/package/network/config/firewall4 
-rm -rf feeds/package/network/config/firewall
-rm -rf feeds/package/network/utils/nftables
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
