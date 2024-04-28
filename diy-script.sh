@@ -31,7 +31,7 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+# git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
@@ -40,7 +40,7 @@ git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
 # 科学上网插件
-git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
+# git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 # Themes
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
@@ -60,7 +60,7 @@ git clone --depth=1 https://github.com/ximiTech/luci-app-msd_lite package/luci-a
 git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
 
 # MosDNS
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+# git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
 
 # Alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
@@ -96,7 +96,6 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 
 # 取消主题默认设置
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
-
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
